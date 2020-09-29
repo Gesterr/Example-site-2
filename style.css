@@ -1,0 +1,185 @@
+html,body{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	overflow-x: hidden;
+	overflow-y: hidden;
+	background-image: url("1.jpg");
+	background-size: 100vw 100vh;
+}
+
+.body{
+	overflow:hidden;
+}
+
+/* Конфигурация и позиционка левой части сайта */
+.left{
+	height: 100vh;
+	background-color: transparent;
+	opacity: 1;
+	text-align: center;
+	vertical-align: middle;
+}
+/* Конфигурация и позиционка правой части сайта*/
+.right{
+	height: 100vh;
+	background-color: transparent;
+	opacity: 1;
+	/* Просто формальное разграничение двух столбцов НЕЗАБУДЬ УБРАТЬ! */
+	/*border-left: 1px solid black;*/
+}
+/* Конфигурация шапки сайта */
+.header{
+	position: fixed;
+	opacity: 0.9;
+	width: 100vw;
+	height: 60px;
+	background-color: #1144AA;
+}
+/* Конфигурация треугольника углом вверх */
+.triangle-up1{
+	opacity: 0.5;
+	position: relative;
+	width: 0;
+    height: 0;
+    border-left: 35px solid transparent;
+    border-right: 35px solid transparent; /**/
+    border-bottom: 60px solid #05296E;
+    margin-left: -39px;
+    display: inline-block;
+}
+/* Конфигурация треугольника углом вниз */
+.triangle-bottom1 {
+	opacity: 0.5;
+	position: relative;
+    width: 0;
+    height: 0;
+    border-left: 35px solid transparent;
+    border-right: 35px solid transparent;
+    border-top: 60px solid #224790;
+    margin-top: -60px;
+    margin-left: 25%;
+    display: inline-block;
+}
+/* Позиционка и конфигурация текста в шапке сайта */
+.text-header{
+	letter-spacing: 11px;
+	position: relative;
+	display: inline-block;
+	bottom: 17px;
+	font-size: 43px;
+	font-family: 'Germania One', cursive;
+	color: #A1B6DF;
+}
+/* Необходимая конфигурация для середины выравнимания по середине блока */
+.pos-pos-slider{
+	display: table;
+	width: 100%;
+	height: 100%;
+}
+/* Ещё одна необходимая конфигурация */
+.pos-slider{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	width: 100px;
+	height: 100px;
+}
+/* Это позиционка под слайдер */
+.slider{
+	line-height: normal;
+    display: inline-block;
+    vertical-align: middle;
+    background-size: 100% 100%;
+    background-image: url('loading.png');
+	width: 75%;
+	height: 50%;
+	border-radius: 10px;
+	border: 5px solid white;
+}
+/* Конфигурация картинок в слайдере */
+#img{
+	border-radius: 5px;
+	width: 100%;
+	height: 100%;
+}
+/* Позиционка необходимая для того, чтобы кнопки были выше картинки */
+.pos{
+	position: absolute;
+	left: 14%;
+	top: 25%;
+	width: 72%;
+	height: inherit;
+	z-index: 3;
+	display: flex;
+	align-items: center;
+}
+/* Позиционка и конфигурация кнопки "вперед - >" */
+#button{
+	font-size: 25px;
+	outline: none;
+	border-right: none;
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: 2px solid black;
+	border-bottom-left-radius: 10px ;
+	border-top-left-radius: 10px;
+	margin-left: 89%; 
+	display: inline-block;
+	width: 35px;
+	height: 50px;
+}
+/* Позиционка и конфигурация кнопки "назад - <" */
+#button1{
+	font-size: 25px;
+	outline: none;
+	border-bottom-right-radius: 10px;
+	border-top-right-radius: 10px;
+	border-right: 2px solid black;
+	border-top: 2px solid black;
+	border-bottom: 2px solid black;
+	border-left: none;
+	display: inline-block;
+	width: 35px;
+	height: 50px;
+}
+
+#button1:hover,#button:hover{
+	background-color: silver;
+}
+/* Позиционка превью */
+.pos-preview{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	width: 100px;
+	height: 100px;
+}
+/* Позиционка и конфигурация превью */
+.preview{
+	border: 5px solid white;
+	line-height: normal;
+	display: inline-block;
+    vertical-align: middle;
+    background: red;
+	width: 50%;
+	height: 43%; 
+	border-radius: 10px;
+}
+
+.preview-text{
+	vertical-align: middle;
+	line-height: normal;
+	letter-spacing: 6px;
+	margin-top: 10px;
+	font-family: 'Germania One', cursive;
+	font-size: 
+}
+
+#previmg{
+	border-radius: 5px;
+	width: 100%;
+	height: 100%;
+}

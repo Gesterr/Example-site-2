@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Example-Site-2</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<!-- Ссылка на jQuery -->
+	<script
+  	src="https://code.jquery.com/jquery-3.5.1.js"
+  	integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+  	crossorigin="anonymous"></script>
+  	<!-- Ссылка на BootsTrap -->
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  	<!-- Шрифт который в шапке сайта -->
+  	<link href="https://fonts.googleapis.com/css2?family=Germania+One&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class='body'>
+	<!-- Шапка сайта -->
+	<div class='header'>
+		<!-- Позиционка треугольника верхушкой к низу -->
+		<div class="triangle-bottom1"></div>
+		<!-- Позиционка треугольника верхушкой к верху -->
+		<div class="triangle-up1"></div>
+		<!-- Текст в шапке сайта -->
+		<h2 class="text-header">Example-Site-2</h2>
+	</div>
+	<div class="container-fluid">
+		<div class="row">
+			<!-- Левый столбик сайта -->
+			<div class="col-md-8 left">
+				<div class="pos-pos-slider">
+					<div class="pos-slider">
+						<div class="slider"><img src="img/2.jpg" id="img">
+							<div class="pos">
+							<button id="button1"><</button>
+							<button id="button">></button>
+							</div>
+					</div>
+					</div>
+				</div>
+			</div>
+			<!-- Правый столбик сайта -->
+			<div class="col-md-4 right">
+				<div class="pos-pos-slider">
+					<div class="pos-preview">
+						<div class="preview"><img src="previmg/k-2.jpg" id="previmg"></div>
+						<p class="preview-text"><a href="#" id="txt">Waterfalls</a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- Этот скрипт изменяет картинку после нажатия на кнопку, а также картинку блока справа -->
+<script>
+	$(function(){
+		var i = 2;
+		var b = 0;
+		var arr = ["Waterfalls","Cute animals","Seas,lakes,oceans","Tigers"];
+		//Это если нажмёшь на кнопку >(Вперед)
+		$("#button").click(function(){
+			$("#img").animate({opacity: 0},300);
+			i++;
+			b++;
+			if(i > 5){
+				i = 2;
+			}
+			if( b > (arr.length-1)){
+				b = 0;
+			}
+			setTimeout (function(){
+			$("#img").attr('src','img/'+[i]+'.jpg');
+			$("#previmg").attr('src','previmg/k-'+[i]+'.jpg');
+			$("#txt").text(arr[b]);
+			},300);
+			$("#img").animate({opacity: 1},300);
+		});
+		//Это если нажмёшь на кнопку <(Назад)
+		$("#button1").click(function(){
+			$("#img").animate({opacity: 0},300);
+			i--;
+			b--;
+			if(i < 2){
+				i = 5;
+			}
+			if(b < 0){
+				b = (arr.length-1);
+			}
+			setTimeout (function(){
+			$("#img").attr('src','img/'+[i]+'.jpg');
+			$("#previmg").attr('src','previmg/k-'+[i]+'.jpg');
+			$("#txt").text(arr[b]);
+			},300);
+			$("#img").animate({opacity: 1},300);
+		});
+	});
+</script>
+<!-- Если разрешение экрана в ширину МЕНЬШЕ чем 992, то включался overflow -->
+<script>
+	$(function(){
+		if(document.documentElement.clientWidth < 992) {
+  			$('body').css("overflow-y","visible");
+		} else{
+			$('body').css("overflow-y","hidden");
+		}
+	});
+</script>
+</body>
+</html>
